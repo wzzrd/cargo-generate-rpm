@@ -252,8 +252,8 @@ impl Config {
             builder = builder.with_file(file_source, options)?;
         }
 
-        if let Some(release) = get_i64_from_metadata!("release") {
-            builder = builder.release(release as u16);
+        if let Some(release) = get_str_from_metadata!("release") {
+            builder = builder.release(release);
         }
         if let Some(epoch) = get_i64_from_metadata!("epoch") {
             builder = builder.epoch(epoch as i32);
